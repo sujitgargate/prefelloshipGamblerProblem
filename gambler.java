@@ -1,5 +1,5 @@
 import java.util.Random;
-public class uc3 {
+public class gambler {
 
 	//Global variables declared
 	public static int bet = 1;
@@ -25,13 +25,12 @@ public class uc3 {
       	stake -= bet;
       }
 	}
-				//If stake reaches to 150 then He is winner for day and he can only Play on next day
-            if(stake == 150){
-                System.out.println("You won the game..You are done for today..!! Thank You.. please try again tomorrow..");
-            }else{
-                System.out.println("You lost the game..You are done for today..!! please try again tomorrow..");
-            }
-            return stake;
-        }
-    }
-
+	//If stake reaches to 150 then He is winner for day and he can only Play on next day
+   if(stake == 150){
+   	System.out.println("You won the game..You are done for today..!! Thank You.. please try again tomorrow..");
+   }else{
+   	System.out.println("You lost the game..You are done for today..!! please try again tomorrow..");
+	}
+	return stake;
+	}
+}
