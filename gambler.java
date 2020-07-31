@@ -1,37 +1,37 @@
 import java.util.Random;
-public class gambler{
-	
-	//Constants declared
-	public static int daysToBeCalculated=20; //Total Days to Be calculated
-	public static int stake=100;
-	public static int bet=1;
-	public static int wonCounter=0; 
-	public static int looseCounter=0;
 
-	public static void main(String args[]){
-		//Method calling
-		calculateTotalWinLoose(daysToBeCalculated);
-	}
+public class gambler {
+    int stake=100;
+    int bet=1;
+    Random rand = new Random();
 
-	public static void calculateTotalWinLoose(int daysToBeCalculated){
-		for(int i=0;i<daysToBeCalculated;i++){
-			findWinLoose();
-		}
-	}
+    public static void main(String args[]){
+        gambler obj=new gambler();
+        int daysToBeCalculated=30;
+        int dailyLimit=50; //Daily Limit For Winning/Loosing in Dollars
+        obj.findDaysWonLost(daysToBeCalculated,dailyLimit);
+    }
 
-	//This method will Print the Number of wins or looses
-	public static void findWinLoose(){
+	//Method for Finding Days Won and lost In dollars
 
-		Random rand = new Random();
-		//For Finding Winning or loosing using Random() function
-		boolean bettingInCasino = rand.nextBoolean();
-		if(bettingInCasino==true){
-			wonCounter++;
-			System.out.println("Winning "+wonCounter);
-		}else{
-			looseCounter--;
-			System.out.println("Loosing "+looseCounter);
-		}
-	}
+	public void findDaysWonLost(int days,int dailyLimit){
+		for(int i=1;i<=days;i++){
+      	boolean bettingInCasino = rand.nextBoolean();
+         if(bettingInCasino==true){
+				//If won , Loop for Winning
+         	for(int j=0;j<rand.nextInt(dailyLimit);j++) {
+            	stake += bet;
+            }
+            System.out.println("Day "+i+ " winning is "+(stake-100));
+            stake = 100;
+				//If lost, Loop for Loosing
+            }else{
+            	for(int j=0;j<rand.nextInt(dailyLimit);j++) {
+                    stake -= bet;
+                }
+            System.out.println("Day "+i+ " loosing is "+(100-stake));
+            stake = 100;
+            }
+        }
+    }
 }
-
