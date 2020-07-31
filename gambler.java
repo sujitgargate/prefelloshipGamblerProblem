@@ -1,14 +1,12 @@
 public class gambler{
    int bet=1;
+
 	public static void main(String args[]){
-      gambler obj=new gambler();
-		obj.startingNewDay();
+		System.out.println(startingNewDay());
 	}
-}
-   public int startingNewDay(){
+
+   public static int startingNewDay(){
       int stake=100;
-      return stake;
+		return stake;
    }
-
-
-
+}
