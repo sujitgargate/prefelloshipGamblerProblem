@@ -1,20 +1,25 @@
-public class uc2{
+import java.util.Random;
+public class gambler{
+	int bet=1;
+	int stake=100;
+	Random rand = new Random();
 
-	public static int winLoose(){
-		int bet=1;
-		int stake=100;
-			int betting=(int)(Math.floor(Math.random()*10)%2);
-			if(betting==1){
-				stake++;
-			}
-				stake--;
-		
+	public static void main(String args[]){
+		gambler obj=new gambler();
+		int winLooseResult=obj.winLooseBetting();
+		System.out.println(winLooseResult);
+	}
+
+	public int winLooseBetting(){
+		boolean bettingInCasino = rand.nextBoolean();
+		if(bettingInCasino==true){
+			stake+=bet;
+		}else{
+			stake-=bet;
+		}
 		return stake;
 	}
-	public static void main(String args[]){
-		int result=winLoose();
-		System.out.println(result);
-	}
-
-
 }
+
+
+
