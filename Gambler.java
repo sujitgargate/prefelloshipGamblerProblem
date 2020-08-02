@@ -89,7 +89,7 @@ public class Gambler {
         }
 
         System.out.println("You have lost " + maxLoosingAmmount + " on Day" + unLuckiestDayOfMonth);
-        System.out.println("You have Won  " + maxWinningAmmount + " on Day " + LuckiestDayOfMonth);
+        System.out.println(" You have Won  " + maxWinningAmmount + " on Day " + LuckiestDayOfMonth);
     }
 
    //Starting new month if player wants to play
@@ -99,6 +99,4 @@ public class Gambler {
       findDaysWonLost(daysToBePlayed, dailyGamblingLimit);
    }
 }
-
-
 
